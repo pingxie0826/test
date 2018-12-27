@@ -1,0 +1,74 @@
+<meta charset='utf-8'>
+<style>
+<!--
+body
+{
+	text-align:center;
+}
+#main
+{
+	border:2px solid blue;
+	width:800px;
+	height:400px;
+}
+.main
+{
+	border:2px solid red;
+	width:750px;
+	height:300px;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+-->
+</style>
+<script src='jquery-1.12.4.js'></script>
+<script>
+<!--
+$(function()
+{
+	$.post('getId.php',function(a,b)
+	{
+		//alert(a+'\n'+b);
+		$(".main").html("").html(a);
+	})
+	$("#btn1").click(function()
+	{
+		var e_id      = $("#e_id").val();
+		var e_name    = $("#e_name").val();
+		var e_profess = $("#e_profess").val();
+		var e_result  = $("#e_result").val();
+		var e_address = $("#e_address").val();
+		$.ajax({
+			url:'0705_2.php',
+			data:{e_id:e_id,e_name:e_name,e_profess:e_profess,e_result:e_result,e_address:e_address},
+			async:true,
+			type:'post',
+			dataType:'html',
+			success:function(a,b)
+					{
+						//alert(a+'\n'+b);
+						if(b!='success')
+						{
+							alert('系统繁忙');
+							return false;
+						}
+						alert(a);
+					},
+			error:function(a,b,c)
+				  {
+					alert(a+'\n'+b+'\n'+c);
+				  },
+			timeout:5000
+		})
+	})
+})
+-->
+</script>
+<body>
+<h1>修改记录</h1>
+<div id='main'>
+	<div class='main'></div>
+	<input type='button' value='修改' id='btn1'>&nbsp;&nbsp;
+	<input type='reset' value='取消' id='btn2'>
+</div>
+</body>

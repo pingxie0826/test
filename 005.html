@@ -1,0 +1,46 @@
+<html>
+<head>&nbsp;
+<link href="css/amazon_scroller.css" rel="stylesheet" type="text/css"></link>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+
+<script language="javascript" type="text/javascript">
+            $(function() {
+                $("#amazon_scroller").amazon_scroller({
+                    scroller_title_show: 'enable',
+                    scroller_time_interval: '4000',
+                    scroller_window_background_color: "#CCC",
+                    scroller_window_padding: '10',
+                    scroller_border_size: '1',
+                    scroller_border_color: '#000',
+                    scroller_images_width: '150',
+                    scroller_images_height: '100',
+                    scroller_title_size: '12',
+                    scroller_title_color: 'black',
+                    scroller_show_count: '2',
+                    directory: 'images'
+                });
+            });
+        </script>
+<head>
+<body>
+<div id="amazon_scroller1" class="amazon_scroller">
+            <div class="amazon_scroller_mask">
+                <ul>
+                    <li><a href="link1" title="title1"><img src="img/sg_1.jpg" width="60" height="60" alt="title"/></a></li>
+                    <li><a href="link2" title="title2"><img src="img/sg_2.jpg" width="60" height="60" alt="title"/></a></li>
+                    <li><a href="link3" title="title3"><img src="img/sg_3.jpg" width="60" height="60" alt="title"/></a></li>
+                    <li><a href="link4" title="title4"><img src="img/sg_4.jpg" width="60" height="60" alt="title"/></a></li>
+                    <li><a href="link1" title="title5"><img src="img/sg_5.jpg" width="60" height="60" alt="title"/></a></li>
+                    <li><a href="link2" title="title6"><img src="img/sg_6.jpg" width="60" height="60" alt="title"/></a></li>
+                    <li><a href="link3" title="title7"><img src="img/sg_1.jpg" width="60" height="60" alt="title"/></a></li>
+                    <li><a href="link4" title="title8"><img src="img/sg_7.jpg" width="60" height="60" alt="title"/></a></li>
+                </ul>
+            </div>
+            <ul class="amazon_scroller_nav">
+                <li></li>
+                <li></li>
+            </ul>
+            <div style="clear: both"></div>
+        </div>
+</body>
+</html>

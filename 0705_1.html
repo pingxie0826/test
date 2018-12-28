@@ -1,0 +1,124 @@
+<meta charset='utf-8'>
+<style>
+<!--
+
+
+-->
+</style>
+<script src='jquery-1.12.4.js'></script>
+<script>
+<!--
+	$(function()
+	{
+		$("#btn").click(function()
+		{
+			//得到该文本框对象
+			var u_name	 = $("#u_name");
+			var u_pass_a = $("#u_pass_a");
+			var u_pass_b = $("#u_pass_b");
+
+			if(u_name.val().length<1)
+			{//字符串长度小于1
+				alert('姓名不得为空');
+				u_name.focus();
+				return false;
+			}
+			if(u_name.val().length<2 ||u_name.val().length>6)
+			{
+				alert('姓名长度要在2~6位字符之间');
+				u_name.val("");//清空
+				u_name.focus();//得光标
+				return false;//禁止提交
+			}
+			if(u_pass_a.val().length<1)
+			{
+				alert('密码不得为空');
+				u_pass_a.focus();
+				return false;
+			}
+			if(u_pass_a.val().length<6 ||u_pass_a.val().length>12)
+			{
+				alert('密码长度要在6~12位字符之间');
+				u_pass_a.val("");//清空
+				u_pass_a.focus();//得光标
+				return false;//禁止提交
+			}
+			if(u_pass_b.val().length<1)
+			{
+				alert('确认密码不得为空');
+				u_pass_b.focus();
+				return false;
+			}
+			if(u_pass_b.val().length<6 ||u_pass_b.val().length>12)
+			{
+				alert('确认密码长度要在6~12位字符之间');
+				u_pass_b.val("");
+				u_pass_b.focus();
+				return false;
+			}
+			if(u_pass_a.val() != u_pass_b.val())
+			{
+				alert('密码不一致');
+				u_pass_a.val("");
+				u_pass_b.val("");
+				u_pass_a.focus();
+				return false;
+			}
+			//得到文字类型的数据值
+			 u_name	 = u_name.val();
+		  var u_pass = u_pass_a.val();
+			alert("姓名:"+u_name+'\n密码:'+u_pass);
+
+			//调用$.ajax()方法
+			$.ajax(
+				{
+					 url:'0705_1.php',
+					data:{u_name:u_name,u_pass:u_pass},
+				   async:true,
+					type:'post',
+				dataTypa:'html',
+				 success:function(a,b)
+							{
+								//alert(a+'\n\n'+b);
+								if(b!='success')
+								{//返回成功
+									alert('系统繁忙……');
+									return false;
+								}
+								if(a=='OK')
+								{
+									alert('登录成功!!!');
+
+								}
+								else
+								{
+									alert('用户名或密码错!');
+								}
+								$("#u_name").val();
+								$("#u_pass_a").val();
+								$("#u_pass_b").val();
+								//可以有选择让用户跳转到其他网页
+								//window.location.href='xxx.html';
+							},		
+					error:function(a,b,c)
+							{
+								alert(a+'\n\n'+b+'\n\n'+c);
+							},		 
+					timeout:5000
+				
+			});
+		
+		})
+	})
+-->
+</script>
+<body>
+	<div id='main'>
+		用户:<input type='text' id='u_name'><br>
+		密码:<input type='text' id='u_pass_a'><br>
+		确认:<input type='text' id='u_pass_b'><br>
+		<hr color='red' size='5'>
+		<input type='button' value='登录' id='btn'>&nbsp;&nbsp;
+		<input type='reset' value='取消' id='cancel'>&nbsp;&nbsp;
+	</div>
+</body>

@@ -1,0 +1,94 @@
+<meta charset='utf-8'>
+<script src='jquery-1.12.4.js'></script>
+<script>
+<!--
+$(function()
+{
+	//alert('aaaaaaaaaa');
+ $("#btn").click(function()
+ {	
+	//alert('警告');
+	 var e_result = $('#e_result').val();
+	 var e_mail   = $('#e_mail').val();
+	 var qq       = $('#qq').val();
+	 var identity = $('#identity').val();
+	 if(e_result.length<1)
+	 {
+		alert('分数不得为空');
+	 }
+	 if(e_mail.length<1)
+	 {
+		alert('邮箱不得为空');
+	 }
+	 if(qq.length<1)
+	 {
+		alert('QQ号不得为空');
+	 }
+	 if(identity.length<1)
+	 {
+		alert('身份证号不得为空');
+	 }
+	 /*
+	  var reg_a =/^[1-9]?[0-9](\.[1-9]?[0-9])?$/;
+	var reg_b= /^/w\.qq\.com$/;
+	 var reg_c=/^[1-9]{5,10}$/
+	 var reg_d= /^((19|20)\d{2}(0([1-9]{1}))|(1[1|2])([0-2]([1-9]{1}))|(3[0-1])\d{3}[1-9])$/;*/
+
+	 /*
+		年
+		((19|20)\d{2})
+
+		月
+		((0([1-9]{1}))|(1[1|2]))
+
+		日
+		(([0-2]([1-9]{1}))|(3[0-1]))
+	 */
+	 //-------------------------------
+	 var reg_a =/^[1-9]?[0-9](\.[1-9]?[0-9])?$/;
+		var reg_b=/^\w{2,9}@qq\.com$/;
+		var reg_c=/^[1-9][0-9]{4,9}$/;
+		var reg_d=/^[1-9][0-9]{5}[1-9][0-9]{3}((0([1-9]{1}))|(1[1|2]))(([0-2]([1-9]{1}))|(3[0|1]))\d{4}$/;
+
+	 if(!(reg_a.test(e_result)))
+	 {
+		alert(e_result+'----非法的分数格式');
+		$("#e_result").focus();
+		$("#e_result").val("");
+		return false;
+	 }
+	  if(!(reg_b.test(e_mail)))
+	 {
+		alert(e_mail+'----非法的邮箱格式');
+		$("#e_mail").focus();
+		$("#e_mail").val("");
+		return false;
+	 }
+	  if(!(reg_c.test(qq)))
+	 {
+		alert(qq+'----非法的qq号');
+		$("#qq").focus();
+		$("#qq").val("");
+		return false;
+	 }
+	  if(!(reg_d.test(identity)))
+	 {
+		alert(identity+'----非法的身份证号');
+		$("#identity").focus();
+		$("#identity").val("");
+		return false;
+	 }
+	 alert(e_result+e_mail+qq+identity);
+
+ })
+})
+-->
+</script>
+	<!--<form method='post' action='0727_3.php'>-->
+	请输入分数:<input type='text' id='e_result' name ='e_result'><br>
+	请输入邮箱:<input type='text' id='e_mail'name='e_mail'><br>
+	请输入QQ号:<input type='text' id='qq'name='qq'><br>
+	身份证号:  <input type='text' id='identity'name='identity'><br>
+	<input type='submit' value='发送' id='btn'>&nbsp;&nbsp;
+	<input type='reset' value='取消'>&nbsp;&nbsp;
+	

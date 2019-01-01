@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<meta charset="UTF-8">
+<title>学生信息查询界面</title>
+<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"  rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="../css/success.css"/> 
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script  type="text/javascript" src="../zz/js/success.js"></script>
+<Script language="javascript"> 
+function GetQueryString(name)
+{
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);//search,查询？后面的参数，并匹配正则
+     if(r!=null)return  unescape(r[2]); return null;
+}
+ 
+</script>
+ 
+</head>
+<body class="well" style="width: 50em; margin: auto; margin-top: 150px; margin-color:black;margin-width:20px; background-color:#87CEFA">
+<h4 >成功登陆!</h4>
+ 
+<marquee direction="left" behavior="alternate"><span id="name"></span><h4>欢迎您</marquee>
+        
+         <h3 style="color:#6B8E23">欢迎您,sysadmin</h3>
+         <hr />
+         <div>
+         <form action="#" method="get">
+            <table border="0px">
+                <tr height="38px">
+                    <td class="left">年级：</td>
+                    <td >
+                        <select style="width:170px"   name="grade" id="nianji">
+                            <option value="0"></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </td>
+                   
+					<td class="right" >班级：</td>
+					 <td>
+						<select style="width:170px" name="class" id="banji"> 
+                            <option value="0"></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </td>
+                   
+                </tr>
+                <tr height="35px">
+                    <td class="left">姓名：</td>
+                    <td>
+                        <input type="text" id="user_name"  />
+                    </td>
+					<td class="right">性别：</td>
+                    <td>
+						全部<input type="radio" name="sex" id="" value=" " />
+					                 男<input type="radio" name="sex" id="" value="男" />
+					                 女<input type="radio" name="sex" id="" value="女" />
+                    </td>
+                </tr>
+             
+            </table>
+        </form>
+        </div>
+       <input type="button" class="btn btn-success btn-block" id="btn"  value="查询"/>
+       <div class="listDIV">
+    <table class="table table-striped table-bordered table-hover table-condensed">
+ 
+        <caption >学生列表 </caption>
+        <thead>
+        <tr class="success">
+            <th id="num" width="80px">学号</th>
+            <th id="name" width="80px">姓名</th>
+            <th id="sex" width="80px">性别</th>
+            <th id="grade" width="80px">年级</th>
+            <th id="class_name" width="80px">班级</th>
+            <th id="chinese" width="80px">语文</th>
+            <th id="math" width="80px">数学</th>
+            <th id="english" width="80px">英语</th>
+           <!--  <th width="80px"><a href="/editStudent?id=${s.id}"><span class="glyphicon glyphicon-edit"></span> </a></th>
+            <th width="80px"><a href="/deleteStudent?id=${s.id}" onclick="javascript:return del();"><span
+                        class="glyphicon glyphicon-trash"></span> </a></th> -->
+        </tr>
+        </thead>
+ 
+        <tbody id="tbody_result">
+       
+        </tbody>
+    </table>
+   
+    <div style="text-align:right">
+    
+             第<input  type="text" id="yeshu" style="width:40px;height:30px" value="1"/>页<input type="button" id="fanye" value="翻页" style="width:40px;height:30px"/>
+  
+     </div>
+   </div>
+</body>
+</html>
+  
+

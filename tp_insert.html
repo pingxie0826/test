@@ -1,0 +1,47 @@
+<meta charset='utf-8'>
+<form action='tp_insert2.php' method='post' onsubmit='return check();'>
+	<table border='1' align='center' cellspacing='0' bordercolor='red' width='500' height='300'>
+		<tr>
+			<td>姓名</td>
+			<td><input type='text' name='name'></td>
+		</tr>
+		<tr>
+			<td>专业</td>
+			<td>
+				<select name='pro'>
+					<option value='软件开发'>软件开发</option>
+					<option value='动漫设计'>动漫设计</option>
+					<option value='环境艺术'>环境艺术</option>
+					<option value='大数据'>大数据</option>
+					<option value='互联网开发'>互联网开发</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>成绩</td>
+			<td><input type='text' name='result'></td>
+		</tr>
+		<tr>
+			<td>地址</td>
+			<td><input type='text' name='addr' size='30'></td>
+		</tr>
+		<tr>
+			<td>邮编</td>
+			<td><input type='text' name='youbian'></td>
+		</tr>
+		<tr>
+			<td>区号</td>
+			<td><input type='text' name='quhao'></td>
+		</tr>
+		<tr>
+			<td>市号</td>
+			<td><input type='text' name='shihao'></td>
+		</tr>
+		<tr>
+			<td colspan='2' align='center'>
+				<input type='submit' value='添加'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type='reset' value='取消'>
+			</td>
+		</tr>
+	</table>
+</form>
